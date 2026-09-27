@@ -33,8 +33,7 @@ export function SwipeableInboxCard({ item, onArchive }: SwipeableInboxCardProps)
         <Pressable>
           <Button
             variant="outline"
-            size="sm"
-            className="min-h-11 opacity-100 group-hover:opacity-100"
+            size="sm" className="opacity-100 group-hover:opacity-100"
             onPress={() => onArchive(item.id)}
             accessibilityLabel={`Archiveer ${item.title}`}>
             <ButtonText>Archiveren</ButtonText>

@@ -17,7 +17,7 @@ export function ThemeToggle() {
       accessibilityRole="button"
       accessibilityLabel={`Thema: ${labels[preference]}. Tik om te wisselen.`}
       onPress={cyclePreference}
-      className="min-h-11 min-w-11 items-center justify-center rounded-full border border-border bg-card px-3">
+      className="items-center justify-center rounded-md border border-border bg-card px-3 py-2">
       <Text size="sm" className="text-foreground">
         {labels[preference]}
       </Text>

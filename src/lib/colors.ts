@@ -1,4 +1,4 @@
-/** Hex mirrors of styles/global.css tokens for rare JS-only APIs. */
+/** Hex mirrors of gluestack-ui v5 tokens for rare JS-only APIs. */
 export const palette = {
   light: {
     background: '#FFFFFF',
@@ -13,7 +13,7 @@ export const palette = {
     background: '#0A0A0A',
     foreground: '#FAFAFA',
     mutedForeground: '#A1A1A1',
-    primary: '#FAFAFA',
+    primary: '#FFF5F5',
     secondary: '#262626',
     card: '#171717',
     border: '#2E2E2E',

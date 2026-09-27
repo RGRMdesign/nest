@@ -61,32 +61,21 @@ iOS en Android gebruiken Expo Go zolang je binnen de modules van het SDK blijft.
 
 ## Styling en theming
 
-Tokens staan in `styles/global.css` en volgen de **gluestack-ui v5 Expo starter defaults** (neutraal grijs, geen custom brand-palette):
+Tokens in `styles/global.css` zijn de **officiële gluestack-ui v5 defaults** — geen custom brand-palette, geen extra radii/fonts/utilities bovenop de kit.
 
-- kleuren: `background`, `foreground`, `card`, `primary`, `secondary`, `muted`, `accent`, `destructive`, `border`, `input`, `ring` en bijbehorende foregrounds
-- `accent` is een subtiele hover-surface (lichtgrijs) met donkere `accent-foreground` — nodig voor outline/ghost buttons
-- radii: `--radius-sm` tot `--radius-xl`
-- typografie: `--font-sans`, `--font-heading`, `--font-mono` (standaard systeemfonts)
-
-Tailwind mapt die variabelen naar utilities zoals `bg-background`, `text-foreground`, `bg-card`, `border-border`, `bg-primary` en `text-primary-foreground`.
+- Semantische kleuren: `primary`, `secondary`, `background`, `foreground`, `card`, `popover`, `muted`, `accent`, `destructive`, `border`, `input`, `ring` (+ foregrounds waar de kit ze gebruikt)
+- Agent-guidance: skill `gluestack-ui-v5` (`.agents/skills/gluestack-ui-v5`) — component props vóór className, alleen semantische tokens
 
 Dark mode:
 
-- **Native:** `prefers-color-scheme` via NativeWind + `Appearance.setColorScheme`. `userInterfaceStyle` staat op `automatic`.
-- **Web:** dezelfde media query, plus class-overrides in `styles/theme.web.css` voor een handmatige toggle. NativeWind v5 RC weigert `:root.dark` op native; daarom staat die override alleen in het web-bestand.
+- **Native:** `@media (prefers-color-scheme: dark)` + `Appearance.setColorScheme`
+- **Web:** class-overrides in `styles/theme.web.css` (NativeWind v5 RC weigert `:root.dark` op native)
 
-JS-spiegels voor layout en motion staan in `src/lib/theme.ts` en `src/lib/colors.ts`. Gebruik die alleen waar CSS-utilities niet kunnen (bijv. Reanimated-drempels). `NativeTabs` gebruikt platformdefaults — geen custom tabbalkleuren — zodat Liquid Glass op iOS 26+ werkt.
-
-Schermen gebruiken `ScreenScaffold` met `ScrollView`/`View` (niet `SafeAreaView` + `className`): NativeWind v5 stylet `SafeAreaView` van `react-native-safe-area-context` niet; NativeTabs regelt insets via `contentInsetAdjustmentBehavior`.
+`NativeTabs` gebruikt platformdefaults (Liquid Glass op iOS 26+). Schermen gebruiken `ScreenScaffold` met `ScrollView`/`View` — niet `SafeAreaView` + `className`.
 
 ### Look & feel wijzigen
 
-1. Pas RGB-tokens in `styles/global.css` aan (en de web-overrides in `styles/theme.web.css`). Houd `accent` een subtiele surface-kleur, geen brand-oranje.
-2. Wijzig radii of fonts in hetzelfde `@theme`-blok.
-3. Optioneel: pas varianten in een lokaal gluestack-bestand onder `src/components/ui/<naam>` aan.
-4. Houd hex-spiegels in `src/lib/colors.ts` gelijk als je ze in JS nodig hebt.
-
-Geen verspreide hex-waarden in schermen. Geen extra UI-kits (Tamagui, Paper, NativeBase).
+Blijf binnen gluestack-tokens en component-props (`variant`, `size`, `space`). Geen hex in schermen, geen tweede theme-systeem, geen extra UI-kits.
 
 ## gluestack-componenten toevoegen
 

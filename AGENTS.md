@@ -42,7 +42,9 @@ Docs: https://docs.expo.dev/eas/index.md
 
 ## This playground
 
-- Styling is NativeWind v5 RC. Tokens live in `styles/global.css`. Do not add a second theme system.
+- Styling is NativeWind v5 RC. Tokens live in `styles/global.css` and must stay on **gluestack-ui v5 defaults** — no custom brand palette on top.
+- Follow the local skill `.agents/skills/gluestack-ui-v5` (component props over className, semantic tokens only).
 - UI primitives come from local gluestack files in `src/components/ui`. Do not add Tamagui, Paper, NativeBase, or `@expo/ui` as the app kit.
 - Routes stay thin in `src/app/`. Screen bodies live in `src/screens/`.
 - Use semantic utilities (`bg-background`, `text-foreground`) instead of hardcoded colors.
+- Do not wrap screens in `SafeAreaView` + `className`; NativeWind v5 does not style that third-party view.
