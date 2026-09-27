@@ -69,7 +69,7 @@ export function SwipeableInboxCard({ item, onArchive }: SwipeableInboxCardProps)
             })
           );
         }),
-    [item.id, onArchive, reduced, width]
+    [context, item.id, onArchive, reduced, width, x]
   );
 
   const cardStyle = useAnimatedStyle(() => ({

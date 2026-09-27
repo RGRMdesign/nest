@@ -53,11 +53,11 @@ function WebTabButton({ children, isFocused, ...props }: TabTriggerSlotProps) {
 function WebTabList(props: TabListProps) {
   return (
     <View className="sticky top-0 z-20 border-b border-border bg-background/95 px-6 py-4">
-      <View className="mx-auto w-full max-w-5xl flex-row items-center gap-3">
-        <Text className="mr-auto text-foreground" bold>
+      <View className="mx-auto w-full max-w-5xl flex-col gap-3 md:flex-row md:items-center">
+        <Text className="text-foreground md:mr-auto" bold>
           Playground
         </Text>
-        <View className="flex-row items-center gap-2 rounded-full border border-border bg-card p-1">
+        <View className="flex-row flex-wrap items-center gap-2 rounded-full border border-border bg-card p-1">
           {props.children}
         </View>
         <ThemeToggle />

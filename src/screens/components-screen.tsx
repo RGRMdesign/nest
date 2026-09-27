@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 
 import { ScreenScaffold } from '@/components/screen-scaffold';
 import { ShowcaseSection } from '@/components/showcase-section';
@@ -76,7 +76,6 @@ import {
 import { Text } from '@/components/ui/text';
 import { Textarea, TextareaInput } from '@/components/ui/textarea';
 import { Toast, ToastDescription, ToastTitle, useToast } from '@/components/ui/toast';
-import { Platform } from 'react-native';
 
 export function ComponentsScreen() {
   const toast = useToast();
@@ -357,7 +356,9 @@ export function ComponentsScreen() {
 
       <AlertDialog isOpen={dialogOpen} onClose={() => setDialogOpen(false)}>
         <AlertDialogBackdrop />
-        <AlertDialogContent className="rounded-xl border border-border bg-card">
+        <AlertDialogContent
+          accessibilityLabel="Project archiveren"
+          className="rounded-xl border border-border bg-card">
           <AlertDialogHeader>
             <Heading size="md">Project archiveren?</Heading>
           </AlertDialogHeader>
@@ -379,7 +380,9 @@ export function ComponentsScreen() {
 
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
         <ModalBackdrop />
-        <ModalContent className="rounded-xl border border-border bg-card">
+        <ModalContent
+          accessibilityLabel="Nieuwe notitie"
+          className="rounded-xl border border-border bg-card">
           <ModalHeader>
             <Heading size="md">Nieuwe notitie</Heading>
             <ModalCloseButton accessibilityLabel="Sluiten" />

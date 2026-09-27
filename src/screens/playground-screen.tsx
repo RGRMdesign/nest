@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Platform, Pressable, useWindowDimensions, View } from 'react-native';
+import { Platform, Pressable, View } from 'react-native';
 
 import { ScreenScaffold } from '@/components/screen-scaffold';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -11,7 +11,6 @@ import { Heading } from '@/components/ui/heading';
 import { Input, InputField } from '@/components/ui/input';
 import { Text } from '@/components/ui/text';
 import { inboxItems, stats, tasks, type TaskStatus } from '@/lib/tasks';
-import { layout } from '@/lib/theme';
 import { useToast, Toast, ToastDescription, ToastTitle } from '@/components/ui/toast';
 
 const filters: { id: 'all' | TaskStatus; label: string }[] = [
@@ -24,8 +23,6 @@ const filters: { id: 'all' | TaskStatus; label: string }[] = [
 
 export function PlaygroundScreen() {
   const toast = useToast();
-  const { width } = useWindowDimensions();
-  const isDesktop = Platform.OS === 'web' && width >= layout.desktopBreakpoint;
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<(typeof filters)[number]['id']>('all');
   const [inbox, setInbox] = useState(inboxItems);
@@ -65,31 +62,29 @@ export function PlaygroundScreen() {
 
   return (
     <ScreenScaffold>
-      <View className={isDesktop ? 'flex-row gap-8' : 'gap-8'}>
-        {isDesktop ? (
-          <View className="w-60 shrink-0 gap-6">
-            <View className="gap-1">
-              <Text size="sm" className="text-muted-foreground">
-                Werkruimte
-              </Text>
-              <Heading size="lg">Noordlicht</Heading>
-            </View>
-            <View className="gap-1">
-              {['Overzicht', 'Taken', 'Inbox', 'Team'].map((item, index) => (
-                <Pressable
-                  key={item}
-                  accessibilityRole="button"
-                  className={`min-h-11 justify-center rounded-lg px-3 ${
-                    index === 0 ? 'bg-secondary' : ''
-                  }`}>
-                  <Text className={index === 0 ? 'text-foreground' : 'text-muted-foreground'}>
-                    {item}
-                  </Text>
-                </Pressable>
-              ))}
-            </View>
+      <View className="gap-8 md:flex-row">
+        <View className="hidden w-60 shrink-0 gap-6 md:flex">
+          <View className="gap-1">
+            <Text size="sm" className="text-muted-foreground">
+              Werkruimte
+            </Text>
+            <Heading size="lg">Noordlicht</Heading>
           </View>
-        ) : null}
+          <View className="gap-1">
+            {['Overzicht', 'Taken', 'Inbox', 'Team'].map((item, index) => (
+              <Pressable
+                key={item}
+                accessibilityRole="button"
+                className={`min-h-11 justify-center rounded-lg px-3 ${
+                  index === 0 ? 'bg-secondary' : ''
+                }`}>
+                <Text className={index === 0 ? 'text-foreground' : 'text-muted-foreground'}>
+                  {item}
+                </Text>
+              </Pressable>
+              ))}
+          </View>
+        </View>
 
         <View className="min-w-0 flex-1 gap-8">
           <View className="flex-row items-start justify-between gap-4">
@@ -113,7 +108,7 @@ export function PlaygroundScreen() {
             </View>
           </View>
 
-          <View className={isDesktop ? 'flex-row gap-3' : 'gap-3'}>
+          <View className="gap-3 md:flex-row">
             {stats.map((stat) => (
               <StatCard key={stat.id} label={stat.label} value={stat.value} hint={stat.hint} />
             ))}
