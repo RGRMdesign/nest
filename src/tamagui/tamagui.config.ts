@@ -1,8 +1,21 @@
-import { defaultConfig, themes } from '@tamagui/config/v5'
+import { createV5Theme, defaultChildrenThemes, defaultConfig } from '@tamagui/config/v5'
 import { createTamagui } from 'tamagui'
 
 import { animationsRoot } from './animationsRoot'
 import { fonts } from './fonts'
+
+/**
+ * Theme suite via Tamagui theme builder helper (createV5Theme).
+ * @see https://tamagui.dev/docs/guides/theme-builder
+ *
+ * Includes light/dark, accent (inverse), and color children:
+ * gray, blue, red, yellow, green, orange, pink, purple, teal, neutral.
+ */
+export const themes = createV5Theme({
+  childrenThemes: {
+    ...defaultChildrenThemes,
+  },
+})
 
 export const config = createTamagui({
   ...defaultConfig,

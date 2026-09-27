@@ -30,6 +30,7 @@ declare module 'one' {
         | `/(app)/playground/forms`
         | `/(app)/playground/shells`
         | `/(app)/playground/signin`
+        | `/(app)/playground/themes`
         | `/_sitemap`
         | `/auth`
         | `/auth/login`
@@ -52,6 +53,7 @@ declare module 'one' {
         | `/playground/forms`
         | `/playground/shells`
         | `/playground/signin`
+        | `/playground/themes`
       DynamicRoutes: 
         | `/(app)/auth/signup/${OneRouter.SingleRoutePart<T>}`
         | `/auth/signup/${OneRouter.SingleRoutePart<T>}`

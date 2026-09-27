@@ -4,6 +4,13 @@
  */
 export const bentoCatalog = [
   {
+    id: 'themes',
+    title: 'Themes',
+    description: 'Dark/light switch + Tamagui theme builder kleuren',
+    href: '/playground/themes',
+    theme: 'blue',
+  },
+  {
     id: 'forms',
     title: 'Forms',
     description: 'Inputs, switches, radio, checkboxes en sign-in layout',
@@ -43,6 +50,6 @@ export const bentoCatalog = [
     title: 'Date picker',
     description: 'Bento DatePicker compositie',
     href: '/playground/datepicker',
-    theme: 'cyan',
+    theme: 'teal',
   },
 ] as const

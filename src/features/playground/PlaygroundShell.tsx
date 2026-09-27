@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { isWeb, ScrollView, SizableText, Theme, XStack, YStack } from 'tamagui'
 
 import { APP_NAME } from '~/constants/app'
+import { ThemeColorPicker } from '~/features/theme/ThemeColorPicker'
 import { Button } from '~/interface/buttons/Button'
 import { CaretLeftIcon } from '~/interface/icons/phosphor/CaretLeftIcon'
 import { PageContainer } from '~/interface/layout/PageContainer'
@@ -76,7 +77,12 @@ export function PlaygroundShell({
             ) : null}
           </YStack>
 
-          <ThemeSwitch />
+          <YStack items="flex-end" gap="$2">
+            <XStack items="center" gap="$2">
+              <ThemeSwitch />
+            </XStack>
+            <ThemeColorPicker variant="compact" />
+          </YStack>
         </XStack>
       </PageContainer>
     </YStack>

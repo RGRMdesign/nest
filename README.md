@@ -9,6 +9,12 @@ Cross-platform playground (iOS, Android, web) op **Tamagui Takeout Free**, met e
 - [Takeout Free](https://github.com/tamagui/takeout-free) — starter kit
 - [Tamagui Bento](https://tamagui.dev/bento) — copy-paste UI-composities (gratis OSS-secties via de officiële download API / `npx bento-get`)
 
+## Themes
+
+- **Mode:** Light / Dark / System (header-icon of segmented control op `/playground/themes`)
+- **Kleurthema’s:** zelfde child themes als Tamagui `createV5Theme` / Theme Builder — base, accent, gray, neutral, blue, teal, green, yellow, orange, red, pink, purple
+- Kleurkeuze blijft bewaard in `localStorage` (`nest.theme.color`)
+
 ## Playground
 
 Start zonder backend op `/playground`. Schermen tonen geïnstalleerde Bento-composities:

@@ -4,6 +4,8 @@ import { MetaTheme, SchemeProvider, useUserScheme } from '@vxrn/color-scheme'
 import { type ReactNode } from 'react'
 import { isWeb, TamaguiProvider, useTheme } from 'tamagui'
 
+import { ThemeColorProvider } from '~/features/theme/ThemeColorContext'
+
 import { config } from './tamagui.config'
 
 export const TamaguiRootProvider = ({ children }: { children: ReactNode }) => {
@@ -20,7 +22,7 @@ const TamaguiInnerProvider = ({ children }: { children: ReactNode }) => {
   return (
     <TamaguiProvider disableInjectCSS config={config} defaultTheme={userScheme.value}>
       {isWeb && <ThemeMetaTag />}
-      {children}
+      <ThemeColorProvider>{children}</ThemeColorProvider>
     </TamaguiProvider>
   )
 }

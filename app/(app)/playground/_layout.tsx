@@ -9,6 +9,7 @@ export function PlaygroundLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
+      <Stack.Screen name="themes" />
       <Stack.Screen name="forms" />
       <Stack.Screen name="elements" />
       <Stack.Screen name="shells" />
