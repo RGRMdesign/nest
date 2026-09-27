@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { getFontSized } from '@tamagui/get-font-sized'
 import { getSpace } from '@tamagui/get-token'
 import { User } from '@tamagui/lucide-icons-2'

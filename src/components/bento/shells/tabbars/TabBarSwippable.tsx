@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import React, { useEffect, useMemo, useRef } from 'react'
 import type { ViewStyle } from 'react-native'
 import { Animated, PanResponder } from 'react-native'

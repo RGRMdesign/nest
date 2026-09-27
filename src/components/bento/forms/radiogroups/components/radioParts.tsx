@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { View, styled } from 'tamagui'
 
 export const Card = styled(View, {

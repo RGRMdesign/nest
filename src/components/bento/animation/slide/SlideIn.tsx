@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { useState } from 'react'
 import { Image, Text, View, XStack } from 'tamagui'
 import { DirectionSlide } from './DirectionSlide'

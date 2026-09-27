@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { useState } from 'react'
 import { Button, View, isWeb, Text } from 'tamagui'
 import { usePhoneScale } from '../../hooks/usePhoneScale'

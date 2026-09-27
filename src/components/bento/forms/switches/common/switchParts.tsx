@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import type { ColorTokens, FontSizeTokens, SizeTokens } from '@tamagui/core'
 import { getSize } from '@tamagui/get-token'
 import {

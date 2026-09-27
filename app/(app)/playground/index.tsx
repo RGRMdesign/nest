@@ -17,9 +17,7 @@ export function PlaygroundIndexPage() {
         <H3 size="$4">Nest × Takeout × Bento</H3>
         <SizableText size="$4" color="$color11" opacity={0.9}>
           Gratis Bento-secties zijn geïnstalleerd via de officiële code-download API (zelfde bron als{' '}
-          <SizableText tag="span" fontWeight="700">
-            npx bento-get
-          </SizableText>
+          <SizableText fontWeight="700">npx bento-get</SizableText>
           ). Pro-composities vragen een Bento-licentie.
         </SizableText>
       </Surface>

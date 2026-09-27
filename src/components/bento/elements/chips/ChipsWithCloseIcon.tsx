@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { X } from '@tamagui/lucide-icons-2'
 import type { SizeTokens, ThemeName } from 'tamagui'
 import { View } from 'tamagui'

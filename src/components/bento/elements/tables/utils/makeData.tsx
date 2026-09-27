@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { randFirstName, randLastName, randNumber } from '@ngneat/falso'
 
 export type Person = {

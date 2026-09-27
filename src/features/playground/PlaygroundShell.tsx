@@ -93,11 +93,8 @@ export function PlaygroundShell({
       <YStack
         flex={1}
         bg="$background"
-        minHeight="100vh"
+        minH="100vh"
         width="100%"
-        $platform-web={{
-          // keep centered app-like column on large screens
-        }}
       >
         {header}
         <ScrollView flex={1}>{body}</ScrollView>

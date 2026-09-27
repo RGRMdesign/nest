@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { useState } from 'react'
 import { Avatar, Label, RadioGroup, Text, YGroup, View, useEvent } from 'tamagui'
 import { Card } from './components/radioParts'

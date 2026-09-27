@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import type * as DocumentPicker from 'expo-document-picker'
 import type * as ImagePicker from 'expo-image-picker/src/ImagePicker'
 import type { DropzoneInputProps, DropzoneRootProps } from 'react-dropzone'

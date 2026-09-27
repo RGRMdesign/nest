@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { useState } from 'react'
 import { AnimatePresence, Button, Text, View, XGroup, styled } from 'tamagui'
 import { useWindowDimensions } from 'tamagui'

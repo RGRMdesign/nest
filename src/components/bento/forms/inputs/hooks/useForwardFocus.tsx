@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import type { RefObject } from 'react'
 import { useEffect, useState } from 'react'
 import type { TamaguiElement } from 'tamagui'

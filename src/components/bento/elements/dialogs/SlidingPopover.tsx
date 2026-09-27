@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import * as React from 'react'
 import type { PopoverProps } from 'tamagui'
 import {

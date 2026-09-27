@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import type { SizeTokens } from 'tamagui'
 import { Avatar, Paragraph, Tooltip, View, styled, withStaticProperties } from 'tamagui'
 

@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { Check, Clock } from '@tamagui/lucide-icons-2'
 import { Checkboxes } from './common/checkboxParts'
 import { useState } from 'react'

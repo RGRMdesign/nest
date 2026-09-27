@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { useId } from 'react'
 import { Input } from './components/inputsParts'
 import type { SizeTokens } from 'tamagui'

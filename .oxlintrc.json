@@ -102,6 +102,16 @@
     },
     {
       "files": [
+        "src/components/bento/**/*.tsx",
+        "src/components/bento/**/*.ts"
+      ],
+      "rules": {
+        "no-restricted-imports": "off",
+        "react-hooks/rules-of-hooks": "off"
+      }
+    },
+    {
+      "files": [
         "**/*.native.tsx",
         "**/*.native.ts"
       ],

@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import type { SizeTokens, ThemeName } from 'tamagui'
 import { View } from 'tamagui'
 import { Chip } from './components/chipsParts'

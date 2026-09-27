@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { Plug, Home, Settings, Heart } from '@tamagui/lucide-icons-2'
 import React from 'react'
 import { YStack, Button, View, XGroup, Theme } from 'tamagui'

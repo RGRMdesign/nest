@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 // vite cjs compat:
 import * as DropZone from 'react-dropzone'
 

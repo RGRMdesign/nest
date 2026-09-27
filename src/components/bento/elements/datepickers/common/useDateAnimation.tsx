@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { useDatePickerContext } from '@rehookify/datepicker'
 import { useEffect, useState } from 'react'
 

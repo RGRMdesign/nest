@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import type { RovingFocusGroupProps, RovingFocusItemProps } from '@tamagui/roving-focus'
 import { RovingFocusGroup } from '@tamagui/roving-focus'
 import type { KeyboardEvent, PropsWithChildren } from 'react'

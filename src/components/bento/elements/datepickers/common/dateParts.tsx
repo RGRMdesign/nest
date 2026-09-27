@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import type { DatePickerProviderProps } from '@rehookify/datepicker'
 import { DatePickerProvider, useDatePickerContext } from '@rehookify/datepicker'
 import { getFontSized } from '@tamagui/get-font-sized'

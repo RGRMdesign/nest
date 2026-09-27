@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { getFontSized } from '@tamagui/get-font-sized'
 import { forwardRef } from 'react'
 import type { ColorTokens, FontSizeTokens, GetProps, SizeTokens } from 'tamagui'

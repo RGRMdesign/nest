@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { Facebook, Github } from '@tamagui/lucide-icons-2'
 import { useState } from 'react'
 import {

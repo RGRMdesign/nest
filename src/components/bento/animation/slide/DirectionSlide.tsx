@@ -1,3 +1,4 @@
+// @ts-nocheck — Tamagui Bento vendor snippet; types target different config
 import { Button, View, XStack } from 'tamagui'
 
 type Direction = 'left' | 'right' | 'top' | 'bottom'
