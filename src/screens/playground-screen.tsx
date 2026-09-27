@@ -75,14 +75,14 @@ export function PlaygroundScreen() {
               <Pressable
                 key={item}
                 accessibilityRole="button"
-                className={`min-h-11 justify-center rounded-lg px-3 ${
+                className={`justify-center rounded-lg px-3 ${
                   index === 0 ? 'bg-secondary' : ''
                 }`}>
                 <Text className={index === 0 ? 'text-foreground' : 'text-muted-foreground'}>
                   {item}
                 </Text>
               </Pressable>
-              ))}
+            ))}
           </View>
         </View>
 
@@ -102,7 +102,7 @@ export function PlaygroundScreen() {
             </View>
             <View className="flex-row items-center gap-2">
               {Platform.OS !== 'web' ? <ThemeToggle /> : null}
-              <Button className="min-h-11" onPress={createTask}>
+              <Button onPress={createTask}>
                 <ButtonText>Nieuwe taak</ButtonText>
               </Button>
             </View>
@@ -116,7 +116,7 @@ export function PlaygroundScreen() {
 
           <View className="gap-4 rounded-xl border border-border bg-card p-4 md:p-5">
             <View className="gap-3 md:flex-row md:items-center">
-              <Input className="min-h-11 flex-1">
+              <Input className="flex-1">
                 <InputField
                   value={query}
                   onChangeText={setQuery}
@@ -133,7 +133,7 @@ export function PlaygroundScreen() {
                       accessibilityRole="button"
                       accessibilityState={{ selected }}
                       onPress={() => setFilter(item.id)}
-                      className={`min-h-11 items-center justify-center rounded-full px-3 ${
+                      className={`items-center justify-center rounded-md px-3 py-2 ${
                         selected ? 'bg-primary' : 'bg-secondary'
                       }`}>
                       <Text

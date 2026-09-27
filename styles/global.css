@@ -6,115 +6,79 @@
 @source "../src/**/*.{js,jsx,ts,tsx}";
 
 /*
-  Semantic tokens live here so a later identity change is mostly a token edit.
-  Light values are the default. Dark values follow the system color scheme.
+  Exact gluestack-ui v5 semantic tokens (see gluestack-ui-v5 skill / starter).
   NativeWind v5 RC rejects `:root.dark` on native; web class overrides live in
   styles/theme.web.css and are imported only on web.
+  card-foreground / destructive-foreground are used by official gluestack
+  components (alert, toast) and are included for that reason.
 */
 
 @layer theme {
   :root {
-    --background: 247 244 239;
-    --foreground: 28 25 23;
-    --card: 255 252 248;
-    --card-foreground: 28 25 23;
-    --popover: 255 252 248;
-    --popover-foreground: 28 25 23;
-    --primary: 47 61 50;
-    --primary-foreground: 247 244 239;
-    --secondary: 237 232 223;
-    --secondary-foreground: 47 61 50;
-    --muted: 237 232 223;
-    --muted-foreground: 110 103 94;
-    --accent: 196 122 88;
-    --accent-foreground: 255 252 248;
-    --destructive: 180 60 50;
-    --destructive-foreground: 255 252 248;
-    --border: 226 220 210;
-    --input: 226 220 210;
-    --ring: 47 61 50;
-    --success: 62 107 79;
-    --success-foreground: 247 244 239;
-    --warning: 176 122 46;
-    --warning-foreground: 47 36 16;
+    --primary: 23 23 23;
+    --primary-foreground: 250 250 250;
+    --card: 255 255 255;
+    --card-foreground: 10 10 10;
+    --secondary: 245 245 245;
+    --secondary-foreground: 23 23 23;
+    --background: 255 255 255;
+    --popover: 255 255 255;
+    --popover-foreground: 10 10 10;
+    --muted: 245 245 245;
+    --muted-foreground: 115 115 115;
+    --destructive: 231 0 11;
+    --destructive-foreground: 250 250 250;
+    --foreground: 10 10 10;
+    --border: 229 229 229;
+    --input: 229 229 229;
+    --ring: 212 212 212;
+    --accent: 247 247 247;
+    --accent-foreground: 52 52 52;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: 22 20 18;
-      --foreground: 245 240 233;
-      --card: 32 29 26;
-      --card-foreground: 245 240 233;
-      --popover: 32 29 26;
-      --popover-foreground: 245 240 233;
-      --primary: 214 204 186;
-      --primary-foreground: 22 20 18;
-      --secondary: 42 38 34;
-      --secondary-foreground: 245 240 233;
-      --muted: 42 38 34;
-      --muted-foreground: 168 160 148;
-      --accent: 210 140 105;
-      --accent-foreground: 22 20 18;
-      --destructive: 232 120 110;
-      --destructive-foreground: 22 20 18;
-      --border: 56 51 46;
-      --input: 56 51 46;
-      --ring: 214 204 186;
-      --success: 138 186 154;
-      --success-foreground: 22 20 18;
-      --warning: 232 188 112;
-      --warning-foreground: 32 24 12;
+      --primary: 255 245 245;
+      --primary-foreground: 23 23 23;
+      --card: 23 23 23;
+      --card-foreground: 250 250 250;
+      --secondary: 38 38 38;
+      --secondary-foreground: 250 250 250;
+      --background: 10 10 10;
+      --popover: 23 23 23;
+      --popover-foreground: 250 250 250;
+      --muted: 38 38 38;
+      --muted-foreground: 161 161 161;
+      --destructive: 255 100 103;
+      --destructive-foreground: 23 23 23;
+      --foreground: 250 250 250;
+      --border: 46 46 46;
+      --input: 46 46 46;
+      --accent: 38 38 38;
+      --accent-foreground: 250 250 250;
+      --ring: 115 115 115;
     }
   }
 }
 
 @theme inline {
-  --color-background: rgb(var(--background));
-  --color-foreground: rgb(var(--foreground));
-  --color-card: rgb(var(--card));
-  --color-card-foreground: rgb(var(--card-foreground));
-  --color-popover: rgb(var(--popover));
-  --color-popover-foreground: rgb(var(--popover-foreground));
   --color-primary: rgb(var(--primary));
   --color-primary-foreground: rgb(var(--primary-foreground));
+  --color-card: rgb(var(--card));
+  --color-card-foreground: rgb(var(--card-foreground));
   --color-secondary: rgb(var(--secondary));
   --color-secondary-foreground: rgb(var(--secondary-foreground));
+  --color-background: rgb(var(--background));
+  --color-popover: rgb(var(--popover));
+  --color-popover-foreground: rgb(var(--popover-foreground));
   --color-muted: rgb(var(--muted));
   --color-muted-foreground: rgb(var(--muted-foreground));
-  --color-accent: rgb(var(--accent));
-  --color-accent-foreground: rgb(var(--accent-foreground));
   --color-destructive: rgb(var(--destructive));
   --color-destructive-foreground: rgb(var(--destructive-foreground));
+  --color-foreground: rgb(var(--foreground));
   --color-border: rgb(var(--border));
   --color-input: rgb(var(--input));
   --color-ring: rgb(var(--ring));
-  --color-success: rgb(var(--success));
-  --color-success-foreground: rgb(var(--success-foreground));
-  --color-warning: rgb(var(--warning));
-  --color-warning-foreground: rgb(var(--warning-foreground));
-
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 22px;
-
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-heading: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  --shadow-card: 0 1px 2px rgb(28 25 23 / 0.04);
-  --shadow-raised: 0 10px 30px rgb(28 25 23 / 0.06);
-}
-
-@utility touch-target {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-@utility shadow-card {
-  box-shadow: var(--shadow-card);
-}
-
-@utility shadow-raised {
-  box-shadow: var(--shadow-raised);
+  --color-accent: rgb(var(--accent));
+  --color-accent-foreground: rgb(var(--accent-foreground));
 }

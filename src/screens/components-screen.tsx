@@ -124,22 +124,22 @@ export function ComponentsScreen() {
         <ShowcaseSection title="Acties" description="Varianten, groottes en disabled states.">
           <View className="gap-4">
             <ButtonGroup flexDirection="row" className="flex-wrap gap-2">
-              <Button className="min-h-11">
+              <Button>
                 <ButtonText>Primary</ButtonText>
               </Button>
-              <Button variant="secondary" className="min-h-11">
+              <Button variant="secondary">
                 <ButtonText>Secondary</ButtonText>
               </Button>
-              <Button variant="outline" className="min-h-11">
+              <Button variant="outline">
                 <ButtonText>Outline</ButtonText>
               </Button>
-              <Button variant="ghost" className="min-h-11">
+              <Button variant="ghost">
                 <ButtonText>Ghost</ButtonText>
               </Button>
-              <Button variant="destructive" className="min-h-11">
+              <Button variant="destructive">
                 <ButtonText>Destructive</ButtonText>
               </Button>
-              <Button isDisabled className="min-h-11">
+              <Button isDisabled>
                 <ButtonText>Disabled</ButtonText>
               </Button>
             </ButtonGroup>
@@ -147,10 +147,10 @@ export function ComponentsScreen() {
               <Button size="sm">
                 <ButtonText>Klein</ButtonText>
               </Button>
-              <Button size="default" className="min-h-11">
+              <Button size="default">
                 <ButtonText>Standaard</ButtonText>
               </Button>
-              <Button size="lg" className="min-h-11">
+              <Button size="lg">
                 <ButtonText>Groot</ButtonText>
               </Button>
             </View>
@@ -163,7 +163,7 @@ export function ComponentsScreen() {
               <FormControlLabel>
                 <FormControlLabelText>Naam</FormControlLabelText>
               </FormControlLabel>
-              <Input className="min-h-11">
+              <Input>
                 <InputField
                   value={name}
                   onChangeText={setName}
@@ -193,8 +193,7 @@ export function ComponentsScreen() {
             <Checkbox
               value="updates"
               isChecked={checked}
-              onChange={setChecked}
-              className="min-h-11">
+              onChange={setChecked}>
               <CheckboxIndicator>
                 <CheckboxIcon as={CheckIcon} />
               </CheckboxIndicator>
@@ -205,8 +204,7 @@ export function ComponentsScreen() {
               value="disabled"
               isChecked={disabledChecked}
               onChange={setDisabledChecked}
-              isDisabled
-              className="min-h-11">
+              isDisabled>
               <CheckboxIndicator>
                 <CheckboxIcon as={CheckIcon} />
               </CheckboxIndicator>
@@ -215,13 +213,13 @@ export function ComponentsScreen() {
 
             <RadioGroup value={role} onChange={setRole} accessibilityLabel="Rol">
               <View className="gap-2">
-                <Radio value="editor" className="min-h-11">
+                <Radio value="editor">
                   <RadioIndicator>
                     <RadioIcon as={CircleIcon} />
                   </RadioIndicator>
                   <RadioLabel>Editor</RadioLabel>
                 </Radio>
-                <Radio value="viewer" className="min-h-11">
+                <Radio value="viewer">
                   <RadioIndicator>
                     <RadioIcon as={CircleIcon} />
                   </RadioIndicator>
@@ -230,7 +228,7 @@ export function ComponentsScreen() {
               </View>
             </RadioGroup>
 
-            <View className="min-h-11 flex-row items-center justify-between gap-4">
+            <View className="flex-row items-center justify-between gap-4">
               <Text className="text-foreground">Meldingen</Text>
               <Switch
                 value={notify}
@@ -244,7 +242,7 @@ export function ComponentsScreen() {
                 <FormControlLabelText>Team</FormControlLabelText>
               </FormControlLabel>
               <Select selectedValue={team} onValueChange={setTeam}>
-                <SelectTrigger variant="outline" size="md" className="min-h-11">
+                <SelectTrigger variant="outline" size="md">
                   <SelectInput placeholder="Kies een team" />
                   <SelectIcon className="mr-3" as={ChevronDownIcon} />
                 </SelectTrigger>
@@ -282,8 +280,8 @@ export function ComponentsScreen() {
                     Product design
                   </Text>
                 </View>
-                <Badge className="rounded-full bg-secondary">
-                  <BadgeText className="text-secondary-foreground">Actief</BadgeText>
+                <Badge variant="secondary">
+                  <BadgeText>Actief</BadgeText>
                 </Badge>
               </View>
             </Card>
@@ -292,16 +290,15 @@ export function ComponentsScreen() {
 
         <ShowcaseSection title="Feedback en overlays">
           <View className="gap-4">
-            <Alert className="rounded-xl border border-border bg-card">
-              <AlertIcon as={InfoIcon} className="text-primary" />
-              <AlertText className="text-foreground">
+            <Alert>
+              <AlertIcon as={InfoIcon} />
+              <AlertText>
                 Tokens blijven leidend. Deze alert gebruikt geen hardcoded kleur.
               </AlertText>
             </Alert>
 
             <View className="flex-row flex-wrap gap-2">
               <Button
-                className="min-h-11"
                 onPress={() => {
                   toast.show({
                     placement: 'top',
@@ -315,13 +312,13 @@ export function ComponentsScreen() {
                 }}>
                 <ButtonText>Toon toast</ButtonText>
               </Button>
-              <Button variant="outline" className="min-h-11" onPress={() => setDialogOpen(true)}>
+              <Button variant="outline" onPress={() => setDialogOpen(true)}>
                 <ButtonText>Open dialog</ButtonText>
               </Button>
-              <Button variant="outline" className="min-h-11" onPress={() => setModalOpen(true)}>
+              <Button variant="outline" onPress={() => setModalOpen(true)}>
                 <ButtonText>Open modal</ButtonText>
               </Button>
-              <Button variant="secondary" className="min-h-11" onPress={() => setSheetOpen(true)}>
+              <Button variant="secondary" onPress={() => setSheetOpen(true)}>
                 <ButtonText>Open sheet</ButtonText>
               </Button>
             </View>
@@ -331,13 +328,13 @@ export function ComponentsScreen() {
         <ShowcaseSection title="Navigatie" description="In-page tabs, naast de app-tabs onderin of bovenin.">
           <Tabs value={tab} onValueChange={setTab} className="gap-3">
             <TabsList>
-              <TabsTrigger value="overview" className="min-h-11">
+              <TabsTrigger value="overview">
                 <TabsTriggerText>Overzicht</TabsTriggerText>
               </TabsTrigger>
-              <TabsTrigger value="activity" className="min-h-11">
+              <TabsTrigger value="activity">
                 <TabsTriggerText>Activiteit</TabsTriggerText>
               </TabsTrigger>
-              <TabsTrigger value="settings" className="min-h-11">
+              <TabsTrigger value="settings">
                 <TabsTriggerText>Instellingen</TabsTriggerText>
               </TabsTrigger>
             </TabsList>
@@ -357,8 +354,7 @@ export function ComponentsScreen() {
       <AlertDialog isOpen={dialogOpen} onClose={() => setDialogOpen(false)}>
         <AlertDialogBackdrop />
         <AlertDialogContent
-          accessibilityLabel="Project archiveren"
-          className="rounded-xl border border-border bg-card">
+          accessibilityLabel="Project archiveren" className="rounded-xl border border-border bg-card">
           <AlertDialogHeader>
             <Heading size="md">Project archiveren?</Heading>
           </AlertDialogHeader>
@@ -368,10 +364,10 @@ export function ComponentsScreen() {
             </Text>
           </AlertDialogBody>
           <AlertDialogFooter className="gap-2">
-            <Button variant="outline" className="min-h-11" onPress={() => setDialogOpen(false)}>
+            <Button variant="outline" onPress={() => setDialogOpen(false)}>
               <ButtonText>Annuleren</ButtonText>
             </Button>
-            <Button className="min-h-11" onPress={() => setDialogOpen(false)}>
+            <Button onPress={() => setDialogOpen(false)}>
               <ButtonText>Archiveren</ButtonText>
             </Button>
           </AlertDialogFooter>
@@ -381,8 +377,7 @@ export function ComponentsScreen() {
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
         <ModalBackdrop />
         <ModalContent
-          accessibilityLabel="Nieuwe notitie"
-          className="rounded-xl border border-border bg-card">
+          accessibilityLabel="Nieuwe notitie" className="rounded-xl border border-border bg-card">
           <ModalHeader>
             <Heading size="md">Nieuwe notitie</Heading>
             <ModalCloseButton accessibilityLabel="Sluiten" />
@@ -393,7 +388,7 @@ export function ComponentsScreen() {
             </Text>
           </ModalBody>
           <ModalFooter>
-            <Button className="min-h-11" onPress={() => setModalOpen(false)}>
+            <Button onPress={() => setModalOpen(false)}>
               <ButtonText>Sluiten</ButtonText>
             </Button>
           </ModalFooter>

@@ -31,12 +31,12 @@ export function HomeScreen() {
 
         <View className="flex-col gap-3 md:flex-row">
           <Link href="/components" asChild>
-            <Button className="min-h-11 flex-1">
+            <Button className="flex-1">
               <ButtonText>Bekijk de UI-kit</ButtonText>
             </Button>
           </Link>
           <Link href="/playground" asChild>
-            <Button variant="outline" className="min-h-11 flex-1">
+            <Button variant="outline" className="flex-1">
               <ButtonText>Open de playground</ButtonText>
             </Button>
           </Link>
@@ -46,8 +46,8 @@ export function HomeScreen() {
 
         <View className="gap-5">
           <InfoRow title="Fundament" body="Expo SDK 57, React Native en Expo Router. Web, iOS en Android delen dezelfde routes." />
-          <InfoRow title="Styling" body="NativeWind v5 RC met semantische tokens in styles/global.css. Light en dark via het systeem, plus een handmatige toggle." />
-          <InfoRow title="Componenten" body="gluestack-ui v5 kopieert componentcode naar src/components/ui. Applicatieschermen importeren die lokale bestanden, niet een gesloten runtime-kit." />
+          <InfoRow title="Styling" body="NativeWind v5 RC met gluestack-ui v5 default tokens in styles/global.css. Light en dark via het systeem, plus een handmatige toggle." />
+          <InfoRow title="Componenten" body="gluestack-ui v5 kopieert componentcode naar src/components/ui. Geen custom styling bovenop de kit; schermen gebruiken props en semantische tokens." />
           <InfoRow title="Beweging" body="React Native Gesture Handler en Reanimated voor native swipe. Op desktop web zijn zichtbare acties de betere UX." />
         </View>
       </View>

@@ -61,30 +61,21 @@ iOS en Android gebruiken Expo Go zolang je binnen de modules van het SDK blijft.
 
 ## Styling en theming
 
-Tokens staan in `styles/global.css`:
+Tokens in `styles/global.css` zijn de **officiële gluestack-ui v5 defaults** — geen custom brand-palette, geen extra radii/fonts/utilities bovenop de kit.
 
-- kleuren: `background`, `foreground`, `card`, `primary`, `secondary`, `muted`, `accent`, `destructive`, `border`, `input`, `ring` en bijbehorende foregrounds
-- radii: `--radius-sm` tot `--radius-xl`
-- typografie: `--font-sans`, `--font-heading`, `--font-mono` (standaard systeemfonts)
-- schaduwen: `--shadow-card`, `--shadow-raised`
-
-Tailwind mapt die variabelen naar utilities zoals `bg-background`, `text-foreground`, `bg-card`, `border-border`, `bg-primary` en `text-primary-foreground`.
+- Semantische kleuren: `primary`, `secondary`, `background`, `foreground`, `card`, `popover`, `muted`, `accent`, `destructive`, `border`, `input`, `ring` (+ foregrounds waar de kit ze gebruikt)
+- Agent-guidance: skill `gluestack-ui-v5` (`.agents/skills/gluestack-ui-v5`) — component props vóór className, alleen semantische tokens
 
 Dark mode:
 
-- **Native:** `prefers-color-scheme` via NativeWind + `Appearance.setColorScheme`. `userInterfaceStyle` staat op `automatic`.
-- **Web:** dezelfde media query, plus class-overrides in `styles/theme.web.css` voor een handmatige toggle. NativeWind v5 RC weigert `:root.dark` op native; daarom staat die override alleen in het web-bestand.
+- **Native:** `@media (prefers-color-scheme: dark)` + `Appearance.setColorScheme`
+- **Web:** class-overrides in `styles/theme.web.css` (NativeWind v5 RC weigert `:root.dark` op native)
 
-JS-spiegels voor layout en motion staan in `src/lib/theme.ts` en `src/lib/colors.ts`. Gebruik die alleen waar CSS-utilities niet kunnen, bijvoorbeeld NativeTabs of Reanimated-drempels.
+`NativeTabs` gebruikt platformdefaults (Liquid Glass op iOS 26+). Schermen gebruiken `ScreenScaffold` met `ScrollView`/`View` — niet `SafeAreaView` + `className`.
 
 ### Look & feel wijzigen
 
-1. Pas RGB-tokens in `styles/global.css` aan (en de web-overrides in `styles/theme.web.css`).
-2. Wijzig radii, fonts of schaduwen in hetzelfde `@theme`-blok.
-3. Optioneel: pas varianten in een lokaal gluestack-bestand onder `src/components/ui/<naam>` aan.
-4. Houd hex-spiegels in `src/lib/colors.ts` gelijk als je NativeTabs-kleuren gebruikt.
-
-Geen verspreide hex-waarden in schermen. Geen extra UI-kits (Tamagui, Paper, NativeBase).
+Blijf binnen gluestack-tokens en component-props (`variant`, `size`, `space`). Geen hex in schermen, geen tweede theme-systeem, geen extra UI-kits.
 
 ## gluestack-componenten toevoegen
 
@@ -137,7 +128,7 @@ Omdat de kit lokaal staat, is dit een bronvervanging, geen runtime-migratie.
 
 ## Platformverschillen
 
-- **Navigatie:** native gebruikt `NativeTabs`; web heeft een bovenbalk. Tabs schuiven niet.
+- **Navigatie:** native gebruikt `NativeTabs` zonder custom kleuren (Liquid Glass op iOS 26+); web heeft een bovenbalk. Tabs schuiven niet.
 - **Inbox-kaart:** iOS/Android swipen met drempel, veer en haptic. Desktop web toont een zichtbare Archiveren-knop. Swipe is daar geen natuurlijke interactie.
 - **Thema:** `Appearance.setColorScheme('unspecified')` herstelt systeemkeuze op native. Web gebruikt document-classes.
 - **`:root.dark`:** werkt niet in de native NativeWind-compiler.
