@@ -1,29 +1,29 @@
 # Nest
 
-Cross-platform playground (iOS, Android, web) gebaseerd op **Tamagui Takeout Free**, met fictieve schermen in **Bento-stijl**.
+Cross-platform playground (iOS, Android, web) op **Tamagui Takeout Free**, met echte **[Tamagui Bento](https://tamagui.dev/bento)** OSS-composities.
 
 ## Stack
 
 - [One](https://onestack.dev) — universal React framework (web + native)
 - [Tamagui](https://tamagui.dev) — UI & themes
 - [Takeout Free](https://github.com/tamagui/takeout-free) — starter kit
-- Bento-achtige secties — lokale, copy-paste-stijl UI-bouwstenen (geen betaalde Bento-licentie vereist)
+- [Tamagui Bento](https://tamagui.dev/bento) — copy-paste UI-composities (gratis OSS-secties via de officiële download API / `npx bento-get`)
 
 ## Playground
 
-Start zonder backend op `/playground`:
+Start zonder backend op `/playground`. Schermen tonen geïnstalleerde Bento-composities:
 
-| Scherm | Pad |
-|--------|-----|
-| Index | `/playground` |
-| Overview | `/playground/overview` |
-| Profile | `/playground/profile` |
-| Feed | `/playground/feed` |
-| Forms | `/playground/forms` |
-| Preferences | `/playground/preferences` |
-| Elements | `/playground/elements` |
-| Paywall | `/playground/paywall` |
-| Chat | `/playground/chat` |
+| Scherm | Pad | Bento bron |
+|--------|-----|------------|
+| Index | `/playground` | catalogus |
+| Forms | `/playground/forms` | inputs, switches, radio, checkboxes, textarea |
+| Elements | `/playground/elements` | buttons, chips, avatars, table, popover |
+| Shells | `/playground/shells` | tab bars |
+| Animation | `/playground/animation` | loading, slide-in, tooltip avatars, slider |
+| Sign in | `/playground/signin` | SignInScreen layout |
+| Date picker | `/playground/datepicker` | DatePicker |
+
+Broncode staat in `src/components/bento/` (zelfde structuur als Bento: `forms/`, `elements/`, `shells/`, `animation/`).
 
 Auth-routes (`/auth`, `/home`) uit Takeout blijven beschikbaar wanneer de backend draait.
 
@@ -42,20 +42,22 @@ bun ios          # iOS simulator (macOS)
 bun android      # Android emulator
 ```
 
+## Meer Bento-composities toevoegen
+
+Gratis componenten:
+
+```bash
+npx bento-get SwitchCustomIcons
+# of: gebruik de code-download API zoals in deze repo
+```
+
+Pro-composities vereisen een [Bento-licentie](https://tamagui.dev/bento) en access token.
+
 ## Projectstructuur
 
 ```
-app/
-  (app)/playground/   # publieke fictieve schermen
-  (app)/home/         # Takeout app (auth vereist)
-  (app)/auth/
-src/
-  features/playground/  # mock data + Bento-achtige primitives
-  interface/            # gedeelde UI
-  tamagui/              # theme config
+app/(app)/playground/     # publieke demo-routes
+src/components/bento/     # Tamagui Bento OSS-composities
+src/features/playground/  # shell + catalogus
+src/interface/            # Takeout UI primitives
 ```
-
-## Notities
-
-- **Bento**: officiële Tamagui Bento-componenten zijn copy-paste/CLI (`npx bento-get`) en grotendeels betaald. Nest bevat Bento-*stijl* secties gebouwd met Tamagui primitives; je kunt later echte Bento-snippets droppen in `src/features/playground/bento/`.
-- **Takeout Pro** is optioneel voor de volledige starter + support: https://tamagui.dev/takeout

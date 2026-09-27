@@ -1,19 +1,20 @@
 import { Slot, Stack } from 'one'
+import { isWeb } from 'tamagui'
 
 export function PlaygroundLayout() {
-  return process.env.VITE_PLATFORM === 'web' ? (
-    <Slot />
-  ) : (
+  if (isWeb) {
+    return <Slot />
+  }
+
+  return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
-      <Stack.Screen name="overview" />
-      <Stack.Screen name="profile" />
-      <Stack.Screen name="feed" />
       <Stack.Screen name="forms" />
-      <Stack.Screen name="preferences" />
       <Stack.Screen name="elements" />
-      <Stack.Screen name="paywall" />
-      <Stack.Screen name="chat" />
+      <Stack.Screen name="shells" />
+      <Stack.Screen name="animation" />
+      <Stack.Screen name="signin" />
+      <Stack.Screen name="datepicker" />
     </Stack>
   )
 }

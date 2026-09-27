@@ -1,7 +1,7 @@
 import { Link } from 'one'
 import { SizableText, Theme, XStack, YStack } from 'tamagui'
 
-import { playgroundScreens } from '~/features/playground/data'
+import { bentoCatalog } from '~/features/playground/data'
 import { PlaygroundShell, SectionLabel, Surface } from '~/features/playground/PlaygroundShell'
 import { CaretRightIcon } from '~/interface/icons/phosphor/CaretRightIcon'
 import { H3 } from '~/interface/text/Headings'
@@ -9,20 +9,23 @@ import { H3 } from '~/interface/text/Headings'
 export function PlaygroundIndexPage() {
   return (
     <PlaygroundShell
-      title="Playground"
-      subtitle="Fictieve schermen gebouwd met Tamagui in Bento-stijl. Backend niet vereist."
+      title="Bento playground"
+      subtitle="Echte Tamagui Bento OSS-composities van tamagui.dev/bento — iOS, Android en web."
       showBack={false}
     >
       <Surface theme="blue">
-        <H3 size="$4">Nest × Takeout</H3>
+        <H3 size="$4">Nest × Takeout × Bento</H3>
         <SizableText size="$4" color="$color11" opacity={0.9}>
-          Deze app start vanuit Tamagui Takeout Free en toont Bento-achtige UI-secties voor
-          iOS, Android en web. Kies een scherm om te verkennen.
+          Gratis Bento-secties zijn geïnstalleerd via de officiële code-download API (zelfde bron als{' '}
+          <SizableText tag="span" fontWeight="700">
+            npx bento-get
+          </SizableText>
+          ). Pro-composities vragen een Bento-licentie.
         </SizableText>
       </Surface>
 
       <YStack gap="$2">
-        <SectionLabel>Schermen</SectionLabel>
+        <SectionLabel>Bento secties</SectionLabel>
         <YStack
           bg="$color2"
           borderWidth={1}
@@ -30,7 +33,7 @@ export function PlaygroundIndexPage() {
           rounded="$6"
           overflow="hidden"
         >
-          {playgroundScreens.map((screen, index) => (
+          {bentoCatalog.map((screen, index) => (
             <Link key={screen.id} href={screen.href as any} asChild>
               <XStack
                 items="center"

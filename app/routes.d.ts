@@ -24,14 +24,12 @@ declare module 'one' {
         | `/(app)/home/settings/edit-profile`
         | `/(app)/playground`
         | `/(app)/playground/`
-        | `/(app)/playground/chat`
+        | `/(app)/playground/animation`
+        | `/(app)/playground/datepicker`
         | `/(app)/playground/elements`
-        | `/(app)/playground/feed`
         | `/(app)/playground/forms`
-        | `/(app)/playground/overview`
-        | `/(app)/playground/paywall`
-        | `/(app)/playground/preferences`
-        | `/(app)/playground/profile`
+        | `/(app)/playground/shells`
+        | `/(app)/playground/signin`
         | `/_sitemap`
         | `/auth`
         | `/auth/login`
@@ -48,14 +46,12 @@ declare module 'one' {
         | `/home/settings/edit-profile`
         | `/playground`
         | `/playground/`
-        | `/playground/chat`
+        | `/playground/animation`
+        | `/playground/datepicker`
         | `/playground/elements`
-        | `/playground/feed`
         | `/playground/forms`
-        | `/playground/overview`
-        | `/playground/paywall`
-        | `/playground/preferences`
-        | `/playground/profile`
+        | `/playground/shells`
+        | `/playground/signin`
       DynamicRoutes: 
         | `/(app)/auth/signup/${OneRouter.SingleRoutePart<T>}`
         | `/auth/signup/${OneRouter.SingleRoutePart<T>}`

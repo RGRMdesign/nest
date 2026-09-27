@@ -1,94 +1,56 @@
-import { useState } from 'react'
-import { Label, SizableText, TextArea, XStack, YStack } from 'tamagui'
+import { SizableText, Separator, YStack } from 'tamagui'
 
-import { PreferenceRow } from '~/features/playground/bento/primitives'
+import { InputWithLabelDemo } from '~/components/bento/forms/inputs/InputWithLabel'
+import { CheckboxCards } from '~/components/bento/forms/checkboxes/CheckboxCards'
+import { GroupedRadio } from '~/components/bento/forms/radiogroups/GroupedRadio'
+import { SwitchCustomIcons } from '~/components/bento/forms/switches/SwitchCustomIcons'
+import { WritePreviewAction } from '~/components/bento/forms/textareas/WritePreviewAction'
 import { PlaygroundShell, SectionLabel, Surface } from '~/features/playground/PlaygroundShell'
-import { Button } from '~/interface/buttons/Button'
-import { Input } from '~/interface/forms/Input'
 
 export function FormsPage() {
-  const [name, setName] = useState('Alex Rivera')
-  const [email, setEmail] = useState('alex@nest.local')
-  const [bio, setBio] = useState('Building playful UIs with Tamagui Bento patterns.')
-  const [newsletter, setNewsletter] = useState(true)
-  const [marketing, setMarketing] = useState(false)
-
   return (
-    <PlaygroundShell title="Forms" subtitle="Input-, textarea- en preference-velden">
+    <PlaygroundShell
+      title="Forms"
+      subtitle="Bento forms — inputs, switches, radio, checkboxes, textarea"
+    >
       <YStack gap="$2">
-        <SectionLabel>Account</SectionLabel>
+        <SectionLabel>Input with label</SectionLabel>
         <Surface>
-          <YStack gap="$2">
-            <Label htmlFor="name">Naam</Label>
-            <Input id="name" value={name} onChangeText={setName} size="$4" />
-          </YStack>
-          <YStack gap="$2">
-            <Label htmlFor="email">E-mail</Label>
-            <Input
-              id="email"
-              value={email}
-              onChangeText={setEmail}
-              size="$4"
-              keyboardType="email-address"
-              autoCapitalize="none"
-            />
-          </YStack>
-          <YStack gap="$2">
-            <Label htmlFor="bio">Bio</Label>
-            <TextArea
-              id="bio"
-              value={bio}
-              onChangeText={setBio}
-              size="$4"
-              minH={100}
-              bg="$color1"
-              borderWidth={1}
-              borderColor="$color6"
-              rounded="$4"
-              p="$3"
-            />
-          </YStack>
+          <InputWithLabelDemo labelText="E-mail" />
         </Surface>
       </YStack>
 
       <YStack gap="$2">
-        <SectionLabel>Voorkeuren</SectionLabel>
+        <SectionLabel>Switch with custom icons</SectionLabel>
         <Surface>
-          <PreferenceRow
-            label="Nieuwsbrief"
-            description="Wekelijkse productupdates"
-            checked={newsletter}
-            onCheckedChange={setNewsletter}
-          />
-          <PreferenceRow
-            label="Marketing"
-            description="Tips en campagnes (fictief)"
-            checked={marketing}
-            onCheckedChange={setMarketing}
-          />
+          <SwitchCustomIcons size="$4" />
         </Surface>
       </YStack>
 
-      <XStack gap="$2">
-        <Button theme="blue" flex={1} size="$5">
-          Opslaan
-        </Button>
-        <Button
-          variant="outlined"
-          flex={1}
-          size="$5"
-          onPress={() => {
-            setName('Alex Rivera')
-            setEmail('alex@nest.local')
-            setBio('Building playful UIs with Tamagui Bento patterns.')
-          }}
-        >
-          Reset
-        </Button>
-      </XStack>
+      <YStack gap="$2">
+        <SectionLabel>Grouped radio</SectionLabel>
+        <Surface>
+          <GroupedRadio />
+        </Surface>
+      </YStack>
 
+      <YStack gap="$2">
+        <SectionLabel>Checkbox cards</SectionLabel>
+        <Surface>
+          <CheckboxCards />
+        </Surface>
+      </YStack>
+
+      <YStack gap="$2">
+        <SectionLabel>Write preview action</SectionLabel>
+        <Surface>
+          <WritePreviewAction />
+        </Surface>
+      </YStack>
+
+      <Separator />
       <SizableText size="$2" color="$color9" text="center">
-        Wijzigingen blijven lokaal — er is geen backend.
+        Bron: tamagui.dev/bento · forms/*
       </SizableText>
     </PlaygroundShell>
   )
