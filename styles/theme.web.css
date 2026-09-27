@@ -1,0 +1,59 @@
+/*
+  Web-only class overrides for a manual light/dark toggle.
+  NativeWind v5 RC rejects qualified selectors such as `:root.dark` on native,
+  so this file is imported only from the web provider.
+*/
+
+@layer theme {
+  :root.dark {
+    --background: 22 20 18;
+    --foreground: 245 240 233;
+    --card: 32 29 26;
+    --card-foreground: 245 240 233;
+    --popover: 32 29 26;
+    --popover-foreground: 245 240 233;
+    --primary: 214 204 186;
+    --primary-foreground: 22 20 18;
+    --secondary: 42 38 34;
+    --secondary-foreground: 245 240 233;
+    --muted: 42 38 34;
+    --muted-foreground: 168 160 148;
+    --accent: 210 140 105;
+    --accent-foreground: 22 20 18;
+    --destructive: 232 120 110;
+    --destructive-foreground: 22 20 18;
+    --border: 56 51 46;
+    --input: 56 51 46;
+    --ring: 214 204 186;
+    --success: 138 186 154;
+    --success-foreground: 22 20 18;
+    --warning: 232 188 112;
+    --warning-foreground: 32 24 12;
+  }
+
+  :root.light {
+    --background: 247 244 239;
+    --foreground: 28 25 23;
+    --card: 255 252 248;
+    --card-foreground: 28 25 23;
+    --popover: 255 252 248;
+    --popover-foreground: 28 25 23;
+    --primary: 47 61 50;
+    --primary-foreground: 247 244 239;
+    --secondary: 237 232 223;
+    --secondary-foreground: 47 61 50;
+    --muted: 237 232 223;
+    --muted-foreground: 110 103 94;
+    --accent: 196 122 88;
+    --accent-foreground: 255 252 248;
+    --destructive: 180 60 50;
+    --destructive-foreground: 255 252 248;
+    --border: 226 220 210;
+    --input: 226 220 210;
+    --ring: 47 61 50;
+    --success: 62 107 79;
+    --success-foreground: 247 244 239;
+    --warning: 176 122 46;
+    --warning-foreground: 47 36 16;
+  }
+}
