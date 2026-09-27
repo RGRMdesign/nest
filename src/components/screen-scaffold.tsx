@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { ScrollView, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { layout } from '@/lib/theme';
 
@@ -10,6 +9,13 @@ type ScreenScaffoldProps = {
   maxWidth?: number;
 };
 
+/**
+ * Screen shell for NativeTabs / web tabs.
+ *
+ * NativeWind v5 does not style SafeAreaView from react-native-safe-area-context
+ * (third-party native view). Use View/ScrollView so className works, and let
+ * NativeTabs apply safe-area insets via contentInsetAdjustmentBehavior.
+ */
 export function ScreenScaffold({
   children,
   scroll = true,
@@ -22,22 +28,17 @@ export function ScreenScaffold({
   );
 
   if (!scroll) {
-    return (
-      <SafeAreaView className="flex-1 bg-background" edges={['top', 'left', 'right']}>
-        {content}
-      </SafeAreaView>
-    );
+    return <View className="flex-1 bg-background">{content}</View>;
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-background" edges={['top', 'left', 'right']}>
-      <ScrollView
-        className="flex-1 bg-background"
-        contentContainerClassName="grow"
-        keyboardShouldPersistTaps="handled"
-        contentInsetAdjustmentBehavior="automatic">
-        {content}
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView
+      className="flex-1 bg-background"
+      contentContainerClassName="grow"
+      keyboardShouldPersistTaps="handled"
+      contentInsetAdjustmentBehavior="automatic"
+      collapsable={false}>
+      {content}
+    </ScrollView>
   );
 }

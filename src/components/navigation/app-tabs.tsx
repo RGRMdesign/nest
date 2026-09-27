@@ -1,38 +1,13 @@
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
-import { DynamicColorIOS, Platform, useColorScheme } from 'react-native';
 
-import { palette } from '@/lib/colors';
-
+/**
+ * Platform defaults only — no custom tab bar colors.
+ * On iOS 26+ NativeTabs draws Liquid Glass from the content behind the bar;
+ * backgroundColor / blur props are ignored there.
+ */
 export default function AppTabs() {
-  const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
-  const colors = palette[scheme];
-
   return (
-    <NativeTabs
-      labelStyle={{
-        default: {
-          color: Platform.OS === 'ios' ? DynamicColorIOS({ light: palette.light.mutedForeground, dark: palette.dark.mutedForeground }) : colors.mutedForeground,
-        },
-        selected: {
-          color:
-            Platform.OS === 'ios'
-              ? DynamicColorIOS({ light: palette.light.foreground, dark: palette.dark.foreground })
-              : colors.foreground,
-        },
-      }}
-      tintColor={
-        Platform.OS === 'ios' ? DynamicColorIOS({ light: palette.light.primary, dark: palette.dark.primary }) : colors.primary
-      }
-      backgroundColor={
-        Platform.OS === 'ios'
-          ? DynamicColorIOS({ light: palette.light.background, dark: palette.dark.background })
-          : colors.background
-      }
-      indicatorColor={
-        Platform.OS === 'ios'
-          ? DynamicColorIOS({ light: palette.light.secondary, dark: palette.dark.secondary })
-          : colors.secondary
-      }>
+    <NativeTabs>
       <NativeTabs.Trigger name="index">
         <NativeTabs.Trigger.Label>Start</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon sf="house.fill" md="home" />

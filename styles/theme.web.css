@@ -2,58 +2,59 @@
   Web-only class overrides for a manual light/dark toggle.
   NativeWind v5 RC rejects qualified selectors such as `:root.dark` on native,
   so this file is imported only from the web provider.
+  Values match the gluestack-ui v5 Expo starter defaults.
 */
 
 @layer theme {
   :root.dark {
-    --background: 22 20 18;
-    --foreground: 245 240 233;
-    --card: 32 29 26;
-    --card-foreground: 245 240 233;
-    --popover: 32 29 26;
-    --popover-foreground: 245 240 233;
-    --primary: 214 204 186;
-    --primary-foreground: 22 20 18;
-    --secondary: 42 38 34;
-    --secondary-foreground: 245 240 233;
-    --muted: 42 38 34;
-    --muted-foreground: 168 160 148;
-    --accent: 210 140 105;
-    --accent-foreground: 22 20 18;
-    --destructive: 232 120 110;
-    --destructive-foreground: 22 20 18;
-    --border: 56 51 46;
-    --input: 56 51 46;
-    --ring: 214 204 186;
-    --success: 138 186 154;
-    --success-foreground: 22 20 18;
-    --warning: 232 188 112;
-    --warning-foreground: 32 24 12;
+    --primary: 250 250 250;
+    --primary-foreground: 23 23 23;
+    --card: 23 23 23;
+    --card-foreground: 250 250 250;
+    --secondary: 38 38 38;
+    --secondary-foreground: 250 250 250;
+    --background: 10 10 10;
+    --popover: 23 23 23;
+    --popover-foreground: 250 250 250;
+    --muted: 38 38 38;
+    --muted-foreground: 161 161 161;
+    --destructive: 255 100 103;
+    --destructive-foreground: 23 23 23;
+    --foreground: 250 250 250;
+    --border: 46 46 46;
+    --input: 46 46 46;
+    --accent: 38 38 38;
+    --accent-foreground: 250 250 250;
+    --ring: 115 115 115;
+    --success: 74 222 128;
+    --success-foreground: 10 10 10;
+    --warning: 250 204 21;
+    --warning-foreground: 23 23 23;
   }
 
   :root.light {
-    --background: 247 244 239;
-    --foreground: 28 25 23;
-    --card: 255 252 248;
-    --card-foreground: 28 25 23;
-    --popover: 255 252 248;
-    --popover-foreground: 28 25 23;
-    --primary: 47 61 50;
-    --primary-foreground: 247 244 239;
-    --secondary: 237 232 223;
-    --secondary-foreground: 47 61 50;
-    --muted: 237 232 223;
-    --muted-foreground: 110 103 94;
-    --accent: 196 122 88;
-    --accent-foreground: 255 252 248;
-    --destructive: 180 60 50;
-    --destructive-foreground: 255 252 248;
-    --border: 226 220 210;
-    --input: 226 220 210;
-    --ring: 47 61 50;
-    --success: 62 107 79;
-    --success-foreground: 247 244 239;
-    --warning: 176 122 46;
-    --warning-foreground: 47 36 16;
+    --primary: 23 23 23;
+    --primary-foreground: 250 250 250;
+    --card: 255 255 255;
+    --card-foreground: 10 10 10;
+    --secondary: 245 245 245;
+    --secondary-foreground: 23 23 23;
+    --background: 255 255 255;
+    --popover: 255 255 255;
+    --popover-foreground: 10 10 10;
+    --muted: 245 245 245;
+    --muted-foreground: 115 115 115;
+    --destructive: 231 0 11;
+    --destructive-foreground: 250 250 250;
+    --foreground: 10 10 10;
+    --border: 229 229 229;
+    --input: 229 229 229;
+    --ring: 212 212 212;
+    --accent: 247 247 247;
+    --accent-foreground: 52 52 52;
+    --success: 22 163 74;
+    --success-foreground: 250 250 250;
+    --warning: 202 138 4;
+    --warning-foreground: 23 23 23;
   }
 }
